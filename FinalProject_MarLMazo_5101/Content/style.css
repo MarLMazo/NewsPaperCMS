@@ -1,0 +1,213 @@
+﻿
+/*********************************
+1. GENERAL STYLE
+2. HEADER
+3. MAIN
+4. FOOTER
+*********************************/
+
+
+/**1. GENERAL STYLE**/
+html {
+    box-sizing: border-box;
+}
+
+*,*::before, *::after{
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1em;
+}
+
+h1{
+    text-align:center;
+    margin: auto;
+    font-size: 2em;
+    font-weight: 700;   
+}
+
+
+/**2. Header**/
+#header, #footer {
+    width: 100%;
+    text-align: center;
+}
+
+#header {
+    height: 5em;
+    background-color: aqua;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+#header h2 {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+/**3. Main **/
+#main-nav ul li {
+    display: inline-block;
+    padding: 1em;
+    border: 1px solid black;
+    background-color: white;
+
+}
+#main-nav ul {
+    transform: translateY(-48px);
+    text-align: center;
+
+}
+a:hover{
+    text-decoration:underline;
+   
+}
+#main-nav ul li:hover{
+    border-bottom: initial;
+}
+#main-nav ul li a:hover{
+    color:aqua;
+}
+#main-nav{
+    margin: 1em 0;
+}
+
+
+#main {
+    margin: 5% 10%;
+    padding: 1em;
+    position: relative;
+    padding-top: 0;
+    -webkit-box-shadow: 4px 3px 15px 0px #000000;
+    box-shadow: 4px 3px 15px 0px #000000;
+}
+
+
+#form1{
+    width: 80%;
+    margin:auto;
+
+}
+
+#body_newsList{
+    margin: 1em 0;
+}
+#body_newsList > div {
+    padding: 1em;
+}
+#body_newsList > div:nth-child(odd){
+    background-color: gray;
+}
+
+#body_newsList > div:hover {
+    background-color: aqua;
+}
+#body_newsList > div:first-child {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.pageList > div{
+    display: inline-block;
+    width:20%;
+    padding: 0 1em;
+    text-align: center;
+}
+
+.pageList> div:first-child{
+    width: 10%;
+}
+.pageList> div:nth-child(2){
+    width: 45%;
+}
+
+
+.showNews h1{
+    text-align:center;
+    font-weight: 700;
+    font-size: 2em;
+    margin-bottom: 2em;
+}
+
+.showNews div{
+    padding: 1em;
+}
+
+.addNews{
+    width: 50%;
+    margin: 5em auto;
+}
+.addNews input[type="text"], .addNews textarea{
+    width: 100%;
+}
+.addNews textarea{
+    height: 25em;
+}
+
+
+#body_ShowAddPage {
+    box-shadow: 3px 4px 0px 0px #1564ad;
+    background: linear-gradient(to bottom, aqua 5%, #378de5 100%);
+    background-color: #79bbff;
+    border-radius: 5px;
+    border: 1px solid #337bc4;
+    display: inline-block;
+    cursor: pointer;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bolder;
+    padding: 12px 44px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #528ecc;
+}
+
+#body_ShowAddPage :hover {
+    background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+    background-color: #378de5;
+}
+
+#body_ShowAddPage :active {
+    position: relative;
+    top: 1px;
+}
+input[type="submit"] {
+    cursor: pointer;
+}
+
+
+
+/*Edit Image*/
+.actionList img{
+    height: 30px;
+    width: 30px;
+}
+
+/*Add Icon*/
+#body_BtnAddPage {
+    display: block;
+    margin: auto;
+    margin-right: 0;
+}
+
+
+#body_PageView > input{
+    display:block;
+  
+}
+#body_PageView > input:last-child {
+    margin:auto;
+    margin-right:0;
+}
+.movePage{
+    text-align:center;
+
+}
+/**4. FOOTER**/
+#footer {
+    height: 100px;
+    background-color: aqua;
+    -webkit-box-shadow: 0px -10px 13px 2px rgba(0,0,0,0.68);
+    box-shadow: 0px -10px 13px 2px rgba(0,0,0,0.68);
+}

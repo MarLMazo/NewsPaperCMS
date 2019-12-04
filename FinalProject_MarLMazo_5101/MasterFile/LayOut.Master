@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LayOut.master.cs" Inherits="FinalProject_MarLMazo_5101.LayOut" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="~/Content/reset.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <header id="header">
+        <h2>Welcome</h2>
+    </header>
+    <main id="main">
+        <form id="form1" runat="server">
+            <div>
+                <asp:ContentPlaceHolder ID="body" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </form>
+    </main>
+    
+    <footer id="footer">
+        <div>Copyright &copy; MDM Corporation</div>
+    </footer>
+</body>
+</html>
