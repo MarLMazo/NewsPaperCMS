@@ -5,15 +5,45 @@ using System.Web;
 
 namespace FinalProject_MarLMazo_5101
 {
-    public class ShowPage
+    public class PageInfo
     {
-        //public string PageID { get; set; }
-        //public string PageTitle { get; set; }
-        //public string PageContent { get; set; }
-        //public string PublishDate { get; set; }
+
+ 
+        private string PageTitle;
+        private string PageContent;
+        private DateTime PublishDate;
+
+        //Christine Bittle In-class Exammple November 29,2019 Web Application
+        //GET VALUES
+        public string GetPageTitle()
+        {
+            return PageTitle;
+        }
+        public string GetPageContent()
+        {
+            return PageContent;
+        }
+        public DateTime GetPublishDate() 
+        {
+            return PublishDate;
+        }
+
+        // SET VALUES
+        public void SetPageTitle(string value)
+        {
+            PageTitle = value;
+        }
+        public void SetPageContent(string value)
+        {
+            PageContent = value;
+        }
+        public void SetPublishDate(DateTime value)
+        {
+
+            PublishDate = value;
+        }
 
 
-        
         public string ShowSpecificPage(int newsID)
         {
             string content = "";

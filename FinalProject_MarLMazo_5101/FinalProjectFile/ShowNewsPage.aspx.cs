@@ -16,7 +16,7 @@ namespace FinalProject_MarLMazo_5101.FinalProjectFile
         {
 
             int newsID = Convert.ToInt32(Request.QueryString["NEWSID"]);
-            var Content = new ShowPage();
+            var Content = new PageInfo();
             PageView.InnerHtml = Content.ShowSpecificPage(newsID);
 
            
@@ -51,9 +51,9 @@ namespace FinalProject_MarLMazo_5101.FinalProjectFile
         protected void BtnDelete_Click(object sender, EventArgs e)
         {
             PageDB db = new PageDB();
-            string newsID = Request.QueryString["NEWSID"];
-            string query = "DELETE from news WHERE NEWSID=" + newsID;
-            db.List_Query(query);
+            int newsID = Convert.ToInt32(Request.QueryString["NEWSID"]);
+            //string query = "DELETE from news WHERE NEWSID=" + newsID;
+            db.Delete_News(newsID);
             Response.Redirect("AdminPage.aspx");
         }
         protected void BtnUpdate_Click(object sender, EventArgs e)

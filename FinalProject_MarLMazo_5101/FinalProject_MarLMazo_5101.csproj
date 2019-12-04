@@ -282,7 +282,7 @@
     <Compile Include="FinalProjectFile\UpdateNewsPage.aspx.designer.cs">
       <DependentUpon>UpdateNewsPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ShowPage.cs" />
+    <Compile Include="PageInfo.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

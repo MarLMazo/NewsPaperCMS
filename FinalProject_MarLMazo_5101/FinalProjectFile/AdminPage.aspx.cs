@@ -117,9 +117,9 @@ namespace FinalProject_MarLMazo_5101
             int DeleteID = Convert.ToInt32(b.ID);
             //Debug.WriteLine(DeleteID);
             var db = new PageDB();
-            string query = "DELETE FROM news WHERE NEWSID =" + DeleteID;
+            //string query = "DELETE FROM news WHERE NEWSID =" + DeleteID;
             //Debug.WriteLine(query);
-            db.List_Query(query);
+            db.Delete_News(DeleteID);
             //Reset the Table header and nav-menu since it was hard coded in the page.
             newsList.InnerHtml = "<div class=\"pageList\"><div>Publish</div><div>News Title</div><div>News Publish Date</div><div>Action</div></div> ";
             nav.InnerHtml = "";

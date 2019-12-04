@@ -15,7 +15,7 @@ namespace FinalProject_MarLMazo_5101
             if (!IsPostBack)
             {
                 PageDB db = new PageDB();
-            ShowNewsPage(db);
+                ShowNewsPage(db);
             }
             
         }
@@ -34,7 +34,7 @@ namespace FinalProject_MarLMazo_5101
                 string newsContent = row["NEWSCONTENT"];
 
                 NewsTitle.Text = newsTitle.ToString();
-                 NewsContent.Text = newsContent.ToString();
+                NewsContent.Text = newsContent.ToString();
 
                 datePublish.InnerHtml = newsDate.ToString();
 
@@ -53,21 +53,23 @@ namespace FinalProject_MarLMazo_5101
 
         protected void BtnUpdate_Click(object sender, EventArgs e)
         {
-            string UpdateNewsTitle = "";
-            string UpdateNewsContent="";
+            //string UpdateNewsTitle = "";
+            //string UpdateNewsContent="";
 
-            string newsID = Request.QueryString["NEWSID"];
+            int newsID = Convert.ToInt32(Request.QueryString["NEWSID"]);
             Debug.WriteLine("Query is up "+ newsID);
+
+            var PageInfo = new PageInfo();
             
-            UpdateNewsTitle = NewsTitle.Text;          
-            UpdateNewsContent = NewsContent.Text;
+            PageInfo.SetPageTitle(NewsTitle.Text);          
+            PageInfo.SetPageContent(NewsContent.Text);
             
 
-            var query = "UPDATE news SET NEWSTITLE=\""+ UpdateNewsTitle+"\", NEWSCONTENT=\""+ UpdateNewsContent + "\" WHERE NEWSID = " + newsID;
-            Debug.WriteLine(query);
+            //var query = "UPDATE news SET NEWSTITLE=\""+ UpdateNewsTitle+"\", NEWSCONTENT=\""+ UpdateNewsContent + "\" WHERE NEWSID = " + newsID;
+            //Debug.WriteLine(query);
             PageDB db = new PageDB();
-            db.List_Query(query);
-            Debug.WriteLine("Query is done");
+            db.Update_News(PageInfo,newsID);
+            //Debug.WriteLine("Query is done");
             Response.Redirect("AdminPage.aspx");
 
         }

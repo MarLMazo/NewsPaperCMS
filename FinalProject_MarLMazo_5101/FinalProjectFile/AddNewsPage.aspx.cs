@@ -22,16 +22,17 @@ namespace FinalProject_MarLMazo_5101.FinalProjectFile
         {
             if (Page.IsValid)
             {
-
-                string NEWSTITLE = NewsTitle.Text.ToString();
-                string NEWSDATE = NewsDate.Text.ToString();
-                string NEWSCONTENT = NewsContent.Text.ToString();
+                var PageInfo = new PageInfo();
+                PageInfo.SetPageTitle(NewsTitle.Text.ToString());
+                PageInfo.SetPublishDate(Convert.ToDateTime(NewsDate.Text));
+                PageInfo.SetPageContent(NewsContent.Text.ToString());
 
                 //Debug.WriteLine(NEWSDATE);
-                string query = "INSERT INTO news (NEWSTITLE,NEWSCONTENT,NEWSDATE) VALUES ('" + NEWSTITLE + "','" + NEWSCONTENT + "','" + NEWSDATE + "')";
+                
+                //string query = "INSERT INTO news (NEWSTITLE,NEWSCONTENT,NEWSDATE) VALUES ('" + NEWSTITLE + "','" + NEWSCONTENT + "','" + NEWSDATE + "')";
                 //Debug.WriteLine(query);
                 var db = new PageDB();
-                db.List_Query(query);
+                db.Add_News(PageInfo);
 
 
                 Response.Redirect("AdminPage.aspx");

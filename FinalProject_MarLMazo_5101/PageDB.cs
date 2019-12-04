@@ -74,6 +74,108 @@ namespace FinalProject_MarLMazo_5101
             return ResultSet;
         }
 
+        public void Delete_News(int newsID)
+        {
+            //deleting a student will require us to modify two tables
+            //one table is the studentsxclasses table (deleting where the studentid is specified)
+            //one table is the students table (to delete the student)
+            //Note: A MySQL trigger can be set up so that the appropriate studentsxclasses records are deleted
+            //when the student is deleted. Currently this database isn't set up with a trigger
 
+            //DELETING ON THE FOREIGN KEY OF STUDENTID IN STUDENTSXCLASSES
+            string query = "DELETE FROM news WHERE NEWSID = {0} " ;
+            query = String.Format(query, newsID);
+            //string removeclasses = "delete from STUDENTSXCLASSES where STUDENTID = {0}";
+            //removeclasses = String.Format(removeclasses, studentid);
+
+            //DELETING ON THE PRIMARY KEY OF STUDENTS
+            //string removestudent = "delete from STUDENTS where STUDENTID = {0}";
+            //removestudent = String.Format(removestudent, studentid);
+
+            MySqlConnection Connect = new MySqlConnection(ConnectionString);
+            //This command removes all the target student's classes from the studentsxclasses table
+            //MySqlCommand cmd_removeclasses = new MySqlCommand(removeclasses, Connect);
+            //This command removes the particular student from the table
+            MySqlCommand cmd_removePage = new MySqlCommand(query, Connect);
+            try
+            {
+                //try to execute both commands!
+                Connect.Open();
+                //remember to remove the relational element first
+                //cmd_removeclasses.ExecuteNonQuery();
+                //Debug.WriteLine("Executed query " + cmd_removeclasses);
+                //then delete the main record
+                cmd_removePage.ExecuteNonQuery();
+                Debug.WriteLine("Executed query " + cmd_removePage);
+            }
+            catch (Exception ex)
+            {
+                //if this isn't working as intended, you can check debug>windows>output for the error message.
+                Debug.WriteLine("Something went wrong in the delete Student Method!");
+                Debug.WriteLine(ex.ToString());
+            }
+
+            Connect.Close();
+        }
+
+        public void Update_News(PageInfo newPage, int newsID)
+        {
+            //slightly better way of injecting data into strings
+
+            //string query = "insert into students (STUDENTFNAME, STUDENTLNAME, STUDENTNUMBER, ENROLMENTDATE) values ('{0}','{1}','{2}','{3}')";
+            string query = "UPDATE news SET NEWSTITLE='{0}', NEWSCONTENT='{1}' WHERE NEWSID = {2}";
+            //string query = "INSERT INTO news (NEWSTITLE,NEWSCONTENT,NEWSDATE) VALUES ('{0} ','{1}','{2}')";
+            query = String.Format(query, newPage.GetPageTitle(), newPage.GetPageContent(), newsID);
+
+
+            //This technique is still sensitive to SQL injection
+            //
+            MySqlConnection Connect = new MySqlConnection(ConnectionString);
+            MySqlCommand cmd = new MySqlCommand(query, Connect);
+            try
+            {
+                Connect.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Something went wrong in the AddStudent Method!");
+                Debug.WriteLine(ex.ToString());
+            }
+
+            Connect.Close();
+
+        }
+        //Chrstine Bittle In-class Example Web Application Nov 29,2019
+        public void Add_News(PageInfo newPage)
+        {
+            //slightly better way of injecting data into strings
+
+            //string query = "insert into students (STUDENTFNAME, STUDENTLNAME, STUDENTNUMBER, ENROLMENTDATE) values ('{0}','{1}','{2}','{3}')";
+            string query = "INSERT INTO news (NEWSTITLE,NEWSCONTENT,NEWSDATE) VALUES ('{0} ','{1}','{2}')";
+            query = String.Format(query, newPage.GetPageTitle(), newPage.GetPageContent(), newPage.GetPublishDate().ToString("yyyy-MM-dd"));
+
+
+            //This technique is still sensitive to SQL injection
+            //
+
+            MySqlConnection Connect = new MySqlConnection(ConnectionString);
+            MySqlCommand cmd = new MySqlCommand(query, Connect);
+            try
+            {
+                Connect.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Something went wrong in the AddStudent Method!");
+                Debug.WriteLine(ex.ToString());
+            }
+
+            Connect.Close();
+
+        }
     }
 }
