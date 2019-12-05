@@ -146,8 +146,8 @@ a:hover{
     height: 25em;
 }
 
-
-#body_ShowAddPage {
+/*#body_ShowAddPage*/
+input[type="submit"] {
     box-shadow: 3px 4px 0px 0px #1564ad;
     background: linear-gradient(to bottom, aqua 5%, #378de5 100%);
     background-color: #79bbff;
@@ -162,13 +162,13 @@ a:hover{
     text-decoration: none;
     text-shadow: 0px 1px 0px #528ecc;
 }
-
-#body_ShowAddPage :hover {
+/*#body_ShowAddPage :hover*/
+input[type="submit"]:hover {
     background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
     background-color: #378de5;
 }
-
-#body_ShowAddPage :active {
+/*#body_ShowAddPage :active*/
+input[type="submit"]:active {
     position: relative;
     top: 1px;
 }
@@ -190,18 +190,20 @@ input[type="submit"] {
     margin: auto;
     margin-right: 0;
 }
-
+#body_PageView > input:nth-child(n+4) {
+    position:relative;
+    left:100%;
+}
 
 #body_PageView > input{
     display:block;
   
 }
-#body_PageView > input:last-child {
-    margin:auto;
-    margin-right:0;
-}
+
+
 .movePage{
     text-align:center;
+    display:block;
 
 }
 /**4. FOOTER**/

@@ -9,7 +9,8 @@
         <asp:Button runat="server" ID="BtnNext" OnClick="BtnNext_Click" Text="Next" />   
     </div>
     <asp:Button runat="server" ID="BtnGoBack" OnClick="BtnGoBack_Click" Text="Go Back" />
-    <asp:Button runat="server" ID="BtnUpdate" OnClick="BtnUpdate_Click" Text="Update" />
-    <asp:Button runat="server" ID="BtnDelete" OnClick="BtnDelete_Click" OnClientClick = " return confirm('Are you sure you want to Delete?')" Text="Delete"/>
+    <asp:ImageButton runat="server" ID="BtnUpdate" ImageUrl="~/Images/edit.png" OnClick ="BtnUpdate_Click" Height="40" Width="40" AlternateText="Image Button Update" />
+    <asp:ImageButton runat="server" ID="BtnDelete" ImageUrl="~/Images/delete.png" OnClientClick = " return confirm('Are you sure you want to Delete?')" Height = "40" Width = "40" AlternateText="Image Button Delete" />
+      
 
 </asp:Content>

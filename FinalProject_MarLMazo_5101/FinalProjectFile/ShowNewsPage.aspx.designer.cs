@@ -57,7 +57,7 @@ namespace FinalProject_MarLMazo_5101.FinalProjectFile
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnUpdate;
+        protected global::System.Web.UI.WebControls.ImageButton BtnUpdate;
 
         /// <summary>
         /// BtnDelete control.
@@ -66,6 +66,6 @@ namespace FinalProject_MarLMazo_5101.FinalProjectFile
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnDelete;
+        protected global::System.Web.UI.WebControls.ImageButton BtnDelete;
     }
 }
