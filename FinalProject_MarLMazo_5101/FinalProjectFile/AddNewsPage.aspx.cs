@@ -27,14 +27,11 @@ namespace FinalProject_MarLMazo_5101.FinalProjectFile
                 PageInfo.SetPublishDate(Convert.ToDateTime(NewsDate.Text));
                 PageInfo.SetPageContent(NewsContent.Text.ToString());
 
-                //Debug.WriteLine(NEWSDATE);
-                
+                //Debug.WriteLine(NEWSDATE);             
                 //string query = "INSERT INTO news (NEWSTITLE,NEWSCONTENT,NEWSDATE) VALUES ('" + NEWSTITLE + "','" + NEWSCONTENT + "','" + NEWSDATE + "')";
                 //Debug.WriteLine(query);
                 var db = new PageDB();
                 db.Add_News(PageInfo);
-
-
                 Response.Redirect("AdminPage.aspx");
             }
         }

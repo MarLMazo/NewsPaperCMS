@@ -2,8 +2,7 @@
 
 <asp:Content id="AdminPage" ContentPlaceHolderID="body" runat="server">
     <nav id="main-nav">
-        <ul id="nav" runat="server">
-        </ul>
+        <ul id="nav" runat="server"></ul>
     </nav>
     <div id="searchBar">
         <asp:label for="newsSearch" runat="server">Search:</asp:label>

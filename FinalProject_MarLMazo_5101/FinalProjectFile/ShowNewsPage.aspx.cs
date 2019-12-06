@@ -66,7 +66,8 @@ namespace FinalProject_MarLMazo_5101.FinalProjectFile
         {
             int currentID = Convert.ToInt32(Request.QueryString["NEWSID"]);
             int PrevID = currentID - 1;
-
+            //If value will be 0 to negative, it will print the current ID
+            //else it will subtract 1 to the current ID and link to the subtracted ID
             if (PrevID < 1)
             {
                 Response.Redirect("ShowNewsPage.aspx?NEWSID=" + currentID);
@@ -82,7 +83,10 @@ namespace FinalProject_MarLMazo_5101.FinalProjectFile
         {
             int currentID = Convert.ToInt32(Request.QueryString["NEWSID"]);
             int NextID = currentID + 1;
-
+            //Get values of the current ID
+            //Compare values to the NumberPage, NumberPage is the count when the AdminPage loaded, the total number of database
+            //If NextID is greater than the total Number of Page, it will still be on the same Page
+            //Else it will go to the next page
             if (NextID > NumberPage)
             {
                 Response.Redirect("ShowNewsPage.aspx?NEWSID=" + currentID);

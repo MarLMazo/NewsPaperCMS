@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterFile/LayOut.Master" AutoEventWireup="true" CodeBehind="ShowNewsPage.aspx.cs" Inherits="FinalProject_MarLMazo_5101.FinalProjectFile.ShowNewsPage" %>
 
 <asp:Content ID="ShowNewsPage" ContentPlaceHolderID="body" runat="server">
-    <div id="PageView" runat="server">
-    </div>
+    <div id="PageView" runat="server"></div>
    
     <div class="movePage">
         <asp:Button runat="server" ID="BtnPrev" OnClick="BtnPrev_Click" Text="Prev" />

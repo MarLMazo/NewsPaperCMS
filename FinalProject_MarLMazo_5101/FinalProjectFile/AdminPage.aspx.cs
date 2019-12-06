@@ -140,8 +140,7 @@ namespace FinalProject_MarLMazo_5101
             string searchkey = "";
             if (Page.IsPostBack)
             {
-                //WARNING: This technique is vulnerable to SQL injections
-                //read more about SQL injections
+                //Christine Bittle In-class Example Web Application 2019
                 //https://www.csoonline.com/article/3257429/what-is-sql-injection-how-sqli-attacks-work-and-how-to-prevent-them.html
                 //we will learn to defend against these attacks next semester
                 searchkey = newsSearch.Text;

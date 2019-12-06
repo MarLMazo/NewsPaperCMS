@@ -68,8 +68,6 @@ namespace FinalProject_MarLMazo_5101
                 content += "<div>" + PublishDate + " </ div > ";
                 content += "</div>";
 
-
-
             }
 
             return content;
@@ -77,6 +75,8 @@ namespace FinalProject_MarLMazo_5101
 
         }
 
+        //Not yet implemented
+        //Plan to use for publish features on Admin part
         public string ShowAllPage()
         {
             string content = "";

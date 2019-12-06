@@ -12,8 +12,7 @@
                 <asp:RegularExpressionValidator runat="server" EnableClientScript="true" ControlToValidate="NewsTitle" ValidationExpression="^[\w\s]+" ErrorMessage="Please enter a valid Title" ForeColor="Red"/>                
             </div>
             <div>
-                <asp:TextBox runat="server"  ID="NewsTitle" Columns="100"></asp:TextBox>
-            
+                <asp:TextBox runat="server"  ID="NewsTitle" Columns="100"></asp:TextBox>            
             </div>  
         </div>
         <div>
