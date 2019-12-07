@@ -102,9 +102,9 @@ namespace FinalProject_MarLMazo_5101
         public void Update_News(PageInfo newPage, int newsID)
         {
 
-            string query = "UPDATE news SET NEWSTITLE='{0}', NEWSCONTENT='{1}' WHERE NEWSID = {2}";
+            string query = "UPDATE news SET NEWSTITLE=\"{0}\", NEWSCONTENT=\"{1}\" WHERE NEWSID = {2}";
             query = String.Format(query, newPage.GetPageTitle(), newPage.GetPageContent(), newsID);
-
+            Debug.WriteLine(query);
             MySqlConnection Connect = new MySqlConnection(ConnectionString);
             MySqlCommand cmd = new MySqlCommand(query, Connect);
             try
@@ -126,7 +126,7 @@ namespace FinalProject_MarLMazo_5101
         public void Add_News(PageInfo newPage)
         {
 
-            string query = "INSERT INTO news (NEWSTITLE,NEWSCONTENT,NEWSDATE) VALUES ('{0} ','{1}','{2}')";
+            string query = "INSERT INTO news (NEWSTITLE,NEWSCONTENT,NEWSDATE) VALUES (\"{0}\",\"{1}\",\"{2}\")";
             query = String.Format(query, newPage.GetPageTitle(), newPage.GetPageContent(), newPage.GetPublishDate().ToString("yyyy-MM-dd"));
 
 
